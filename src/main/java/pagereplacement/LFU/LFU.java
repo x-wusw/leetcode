@@ -1,4 +1,4 @@
-package pagereplacement;
+package pagereplacement.LFU;
 
 import java.util.Collections;
 import java.util.HashMap;
