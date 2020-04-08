@@ -28,6 +28,7 @@ public class Solution9 {
         boolean[][] visited=new boolean[m][n];
         //广搜
         queue.add(new int[]{0,0});
+        System.out.println(queue);
         int count=0;
         visited[0][0]=true;
         while (!queue.isEmpty()) {
