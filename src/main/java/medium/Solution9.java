@@ -47,6 +47,7 @@ public class Solution9 {
                 queue.add(new int[]{poll[0],poll[1]+1});
                 visited[poll[0]][poll[1]+1]=true;
             }
+
         }
         return count;
     }
