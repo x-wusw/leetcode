@@ -13,7 +13,7 @@ public class Solution17 {
         System.out.println(s.canJump1(num));
     }
     //更新该位置能达到的最大值，如果该值大于等于数组长度则能到达反之不能
-    public boolean canJump(int[] nums){
+    private boolean canJump(int[] nums){
         int n = nums.length;
         int l = 0,r = 0;
         for ( ; l <= r; l++) {
