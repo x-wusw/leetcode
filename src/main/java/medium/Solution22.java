@@ -14,13 +14,16 @@ package medium;
 public class Solution22 {
     public static void main(String[] args) {
         Solution22 s = new Solution22();
-        System.out.println(s.waysToChange(10));
-        System.out.println(s.simple(10));
+        System.out.println(s.waysToChange(5));
+        System.out.println(s.simple(5));
     }
     private int waysToChange(int n){
+        if(n == 0){
+            return 0;
+        }
         int[][] dp = new int[4][n+1];
         int[] coin = {1,5,10,25};
-        for (int i = 0; i <=n ; i++) {
+        for (int i = 0; i <= n ; i++) {
             dp[0][i] = 1;   //硬币为1时只有一种情况
         }
         for (int i = 1; i < coin.length; i++) {
@@ -39,12 +42,13 @@ public class Solution22 {
     }
     //简化为一维数组
     private int simple(int n){
+        if(n == 0){
+            return 0;
+        }
         int[] coin = {1,5,10,25};
         int[] dp = new int[n+1];
-        for (int i = 0; i <= n ; i++) {
-            dp[i] = 1;
-        }
-        for (int i = 1; i < coin.length; i++) {
+        dp[0] = 1; //金额为0
+        for (int i = 0; i < coin.length; i++) {
             for (int j = 1; j <= n ; j++) {
                 if(j >= coin[i]){
                     dp[j] = dp[j]+dp[j-coin[i]];
