@@ -1,5 +1,6 @@
 package diffculty;
 
+
 /*
     合并k个链表
  */
@@ -71,23 +72,29 @@ public class Solution6 {
         ListNode listNodes3 = new ListNode(2);
         listNodes1.next = listNodes2;
         listNodes2.next = listNodes3;
-
+        while (listNodes1!=null){
+            System.out.print(listNodes1.val+"->");
+            listNodes1 = listNodes1.next;
+        }
+        System.out.println();
         ListNode listNodes10 = new ListNode(3);
         ListNode listNodes20 = new ListNode(1);
         ListNode listNodes30 = new ListNode(9);
         listNodes10.next = listNodes20;
         listNodes20.next = listNodes30;
+        while (listNodes10!=null){
+            System.out.print(listNodes10.val+"->");
+            listNodes10 = listNodes10.next;
+        }
+        System.out.println();
+        ListNode[] listNodes = {new ListNode(1),new ListNode(4),new ListNode(2),new ListNode(3),new ListNode(0)};
+        ListNode node = s.mergeKLists(listNodes);
+        while (node != null){
+            System.out.print(node.val+"->");
+            node = node.next;
 
-        ListNode[] listNodes = {listNodes1,listNodes10};
-        ListNode node = listNodes[0];
-        ListNode[] list = {};
-        for (int i = 0; i < listNodes.length ; i++) {
-            list[i] = s.mergeKLists(listNodes);
-            node.next = node;
         }
-        for (int i = 0; i < list.length ; i++) {
-            System.out.print(list[i].val);
-        }
+
 
 
     }
