@@ -30,7 +30,7 @@ public class Solution26 {
 
     public static void main(String[] args) {
         Solution26 s = new Solution26();
-        System.out.println("1-100的快乐数有");
+        System.out.println("1-100的快乐数有：");
         for (int i = 1; i < 100; i++) {
             if(s.isHappy(i)){
                 System.out.print(i+" ");}
