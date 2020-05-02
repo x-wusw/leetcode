@@ -1,7 +1,9 @@
 package medium;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 快乐数
@@ -17,16 +19,37 @@ public class Solution26 {
             while (n > 0){
                 temp += Math.pow(n%10,2);
                 n = n /10;
-                if(map.containsKey(temp)){
-                    return false;
-                }else{
-                    map.put(temp,1);
-                }
+            }
+            if(map.containsKey(temp)){
+                return false;
+            }else{
+                map.put(temp,1);
             }
             n = temp;
         }
         return true;
     }
+    /*
+    private int getNext(int n) {
+        int totalSum = 0;
+        while (n > 0) {
+            int d = n % 10;
+            n = n / 10;
+            totalSum += d * d;
+        }
+        return totalSum;
+    }
+
+    private boolean isHappy1(int n) {
+        Set<Integer> seen = new HashSet<>();
+        while (n != 1 && !seen.contains(n)) {
+            seen.add(n);
+            n = getNext(n);
+        }
+        return n == 1;
+    }
+    */
+
 
     public static void main(String[] args) {
         Solution26 s = new Solution26();
@@ -35,5 +58,6 @@ public class Solution26 {
             if(s.isHappy(i)){
                 System.out.print(i+" ");}
         }
+        System.out.println(s.isHappy(19));
     }
 }
